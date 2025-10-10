@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">Join Our Team</h2>
+
+<div class="row">
+  {% for job in jobs %}
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ job.title }}</h5>
+          <p class="card-text">{{ job.desc }}</p>
+          <a href="{{ url_for('apply', job_id=job.id) }}" class="btn btn-outline-primary">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

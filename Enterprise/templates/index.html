@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center justify-content-center text-center text-light"
+         style="position: relative; height: 100vh; overflow: hidden;">
+
+  <!-- Background Image -->
+  <div class="hero-bg" 
+       style="background: url('{{ url_for('static', filename='company.jpg') }}') center center / cover no-repeat;
+              position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+              filter: brightness(60%) contrast(105%);
+              z-index: 0;">
+  </div>
+
+  <!-- Dark Overlay -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+              background: rgba(0, 0, 0, 0.55); z-index: 1;">
+  </div>
+
+  <!-- Content -->
+  <div class="container position-relative" style="z-index: 2;">
+    <h1 class="display-3 fw-bold mb-3 text-uppercase" style="letter-spacing: 0.5px;">
+      Eminence in Action, <span class="text-primary">Impact in Results</span>
+    </h1>
+    <p class="lead mb-5 fs-4 text-light opacity-75">
+      Empowering businesses through technology, innovation, and creativity.
+    </p>
+    <div>
+      <a href="{{ url_for('careers') }}" 
+         class="btn btn-primary btn-lg mx-2 px-4 rounded-pill shadow-lg border-0">
+        Join Our Team
+      </a>
+      <a href="{{ url_for('contact') }}" 
+         class="btn btn-outline-light btn-lg mx-2 px-4 rounded-pill shadow-lg">
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+  <!-- Subtle gradient fade at the bottom -->
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 200px;
+              background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="{{ url_for('static', filename='tech.jpeg') }}" alt="About Eminent Enterprise" class="img-fluid rounded-4 shadow">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">Pioneering the Future of Technology</h2>
+        <p class="text-muted">
+          At <strong>Eminent Enterprise</strong>, we transform ideas into powerful solutions. From AI-driven platforms to cutting-edge web and mobile applications, we empower businesses to thrive in the digital age.
+        </p>
+        <p class="text-muted">
+          Our team blends creativity and technical excellence to craft scalable, intuitive, and transformative software solutions.
+        </p>
+        <a href="{{ url_for('careers') }}" class="btn btn-primary mt-3 rounded-pill px-4">Explore Opportunities</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services / Capabilities Section -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">What We Do</h2>
+    <p class="text-muted mb-5">Driving innovation across industries with intelligent, impactful software solutions.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <i class="bi bi-cpu fs-1 text-primary mb-3"></i>
+            <h5 class="fw-bold">Artificial Intelligence & ML</h5>
+            <p class="text-muted">Harnessing data to build predictive, adaptive, and intelligent systems that power smarter decisions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <i class="bi bi-laptop fs-1 text-primary mb-3"></i>
+            <h5 class="fw-bold">Web & Mobile Development</h5>
+            <p class="text-muted">Crafting seamless, high-performance applications designed to engage and deliver exceptional experiences.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <i class="bi bi-people fs-1 text-primary mb-3"></i>
+            <h5 class="fw-bold">Consulting & Strategy</h5>
+            <p class="text-muted">Providing end-to-end guidance to align technology solutions with business goals and long-term growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI & Innovation Section -->
+<section class="py-5 bg-dark text-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="fw-bold">Innovation at the Core</h2>
+        <p class="text-light opacity-75">
+          We are at the forefront of <strong>AI and Machine Learning</strong> innovation. Our solutions analyze data, automate workflows, and deliver insights that redefine performance and efficiency.
+        </p>
+        <p class="text-light opacity-75">
+          Every project is a step toward shaping a smarter, more connected future.
+        </p>
+        <a href="{{ url_for('contact') }}" class="btn btn-outline-light mt-3 rounded-pill px-4">Let's Collaborate</a>
+      </div>
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='ai.jpeg') }}" alt="AI Innovation" class="img-fluid rounded-4 shadow-lg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Young Talent Section -->
+<section class="py-5 bg-light" style="position: relative; overflow: hidden;">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      
+      <!-- Text Content -->
+      <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+        <h2 class="fw-bold mb-3 display-6 text-dark" style="letter-spacing: 1px;">
+          Empowering the <span class="text-body-secondary">Next Generation</span>
+        </h2>
+        <p class="text-muted fs-5 mb-4" style="line-height: 1.7;">
+          We believe in nurturing young prodigies through <strong>training</strong>, 
+          <strong>mentorship</strong>, and <strong>real-world experience</strong> — 
+          inspiring them to build, create, and lead the innovations of tomorrow.
+        </p>
+        <p class="text-secondary fst-italic">
+          Together, we shape a future powered by vision, talent, and purpose.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="col-lg-6 text-center">
+        <img src="{{ url_for('static', filename='young.jpeg') }}" 
+             alt="Young Talent"
+             class="img-fluid rounded-4 shadow"
+             style="max-width: 85%; height: auto; object-fit: cover; transition: transform 0.4s ease;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Optional subtle hover effect -->
+<style>
+  .col-lg-6 img:hover {
+    transform: scale(1.03);
+  }
+</style>
+
+
+<!-- Admin Access -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <p class="text-muted mb-3">For administrative access:</p>
+    <a href="{{ url_for('admin_login') }}" class="btn btn-dark rounded-pill px-4">
+      <i class="bi bi-lock-fill me-2"></i> Admin Dashboard
+    </a>
+  </div>
+</section>
+
+
+<!-- Chatbot Floating Icon -->
+<!-- Floating Chatbot Icon -->
+<div id="chatbot-icon" onclick="toggleChatbot()" 
+     style="position: fixed; bottom: 30px; right: 30px;
+            background-color: white; border: 2px solid #0d6efd;
+            color: #0d6efd; font-size: 2rem;
+            border-radius: 50%; width: 65px; height: 65px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer; z-index: 9999; transition: transform 0.3s ease;">
+  🤖
+</div>
+
+<!-- Hover Animation -->
+<style>
+  #chatbot-icon:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+
+<!-- Chatbot Window -->
+<div id="chatbot-window" 
+     style="position: fixed; bottom: 100px; right: 30px; width: 320px; 
+            height: 420px; background: white; border-radius: 15px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            display: none; flex-direction: column; z-index: 9999; overflow: hidden;">
+  
+  <!-- Header -->
+  <div style="background-color: #0d6efd; color: white; padding: 12px; 
+              display: flex; justify-content: space-between; align-items: center;">
+    <span class="fw-bold">Eminent 🤖</span>
+    <button class="btn btn-sm btn-light" onclick="toggleChatbot()">×</button>
+  </div>
+  
+  <!-- Messages -->
+  <div id="chatbot-messages" 
+       style="flex: 1; padding: 12px; overflow-y: auto; font-size: 0.9rem; background-color: #f8f9fa;">
+    <div class="bot-message mb-2">
+      <strong>Eminent:</strong> Hello! 👋 I’m <b>Eminent</b>. How can I assist you today?
+    </div>
+  </div>
+
+  <!-- Input Area -->
+  <div style="display: flex; border-top: 1px solid #ddd;">
+    <input id="user-input" type="text" class="form-control border-0" placeholder="Type your message..." 
+           style="font-size: 0.9rem;">
+    <button onclick="sendMessage()" class="btn btn-primary">Send</button>
+  </div>
+</div>
+
+
+<script>
+  function toggleChatbot() {
+    const chatWindow = document.getElementById('chatbot-window');
+    chatWindow.style.display = (chatWindow.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('user-input');
+    const messagesDiv = document.getElementById('chatbot-messages');
+    const userMessage = input.value.trim();
+    if (!userMessage) return;
+
+    const userDiv = document.createElement('div');
+    userDiv.className = 'user-message mb-2 text-end';
+    userDiv.innerHTML = `<strong>You:</strong> ${userMessage}`;
+    messagesDiv.appendChild(userDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    input.value = '';
+
+    fetch('/chatbot', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: userMessage})
+    })
+    .then(res => res.json())
+    .then(data => {
+      const botDiv = document.createElement('div');
+      botDiv.className = 'bot-message mb-2';
+      botDiv.innerHTML = `<strong>Eminent:</strong> ${data.reply}`;
+      messagesDiv.appendChild(botDiv);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    })
+    .catch(() => {
+      const botDiv = document.createElement('div');
+      botDiv.className = 'bot-message mb-2 text-danger';
+      botDiv.innerHTML = `<strong>Eminent:</strong> Sorry, I’m having trouble responding right now.`;
+      messagesDiv.appendChild(botDiv);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('user-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') sendMessage();
+    });
+  });
+</script>
+
+{% endblock %}

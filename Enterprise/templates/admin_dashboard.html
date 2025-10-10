@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Admin Dashboard</h2>
+
+  <!-- ✅ ANALYTICS CARDS -->
+  <div class="row text-center mb-4">
+    <div class="col-md-3">
+      <div class="card bg-primary text-white p-3 rounded-3 shadow-sm">
+        <h4>Total</h4><h2>{{ total }}</h2>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-success text-white p-3 rounded-3 shadow-sm">
+        <h4>Accepted</h4><h2>{{ accepted }}</h2>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-danger text-white p-3 rounded-3 shadow-sm">
+        <h4>Rejected</h4><h2>{{ rejected }}</h2>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-secondary text-white p-3 rounded-3 shadow-sm">
+        <h4>Pending</h4><h2>{{ pending }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔍 SEARCH BAR -->
+  <form method="GET" class="mb-4">
+    <div class="input-group">
+      <input type="text" name="search" class="form-control" placeholder="Search by name, email, or job ID..." value="{{ search }}">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </div>
+  </form>
+
+  {% if applications %}
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Job ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Resume</th>
+          <th>Status</th>
+          <th>Interview</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for app in applications %}
+          <tr>
+            <td>{{ app.id }}</td>
+            <td>{{ app.job_id }}</td>
+            <td>{{ app.name }}</td>
+            <td>{{ app.email }}</td>
+            <td>{{ app.phone }}</td>
+            <td>
+              <a href="{{ url_for('uploaded_file', filename=app.resume_filename) }}" class="btn btn-sm btn-success">Download</a>
+            </td>
+            <td>
+              {% if app.status == 'Accepted' %}
+                <span class="badge bg-success">Accepted</span>
+              {% elif app.status == 'Rejected' %}
+                <span class="badge bg-danger">Rejected</span>
+              {% else %}
+                <span class="badge bg-secondary">Pending</span>
+              {% endif %}
+            </td>
+            <td>{{ app.interview_date if app.interview_date else 'N/A' }}</td>
+            <td>
+              {% if app.status == 'Pending' %}
+                <a href="{{ url_for('update_status', app_id=app.id, action='accept') }}" class="btn btn-sm btn-primary">Accept</a>
+                <a href="{{ url_for('update_status', app_id=app.id, action='reject') }}" class="btn btn-sm btn-danger">Reject</a>
+              {% else %}
+                <span class="text-muted">Action Taken</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="text-center">No applications found.</p>
+  {% endif %}
+
+  <a href="{{ url_for('admin_logout') }}" class="btn btn-outline-danger mt-3">Logout</a>
+</div>
+{% endblock %}

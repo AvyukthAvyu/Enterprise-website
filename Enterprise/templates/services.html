@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 mb-5">
+    <h1 class="text-center mb-4 fw-bold">Our Services</h1>
+    <p class="text-center mb-5 text-muted">
+        At <strong>EMINENT ENTERPRISE</strong>, we are dedicated to delivering technology-driven solutions that help businesses scale, innovate, and stay ahead of the competition.
+        Our team of experts brings deep technical expertise and industry experience to every project we undertake.
+    </p>
+
+    <!-- Software Development -->
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+            <h3 class="fw-semibold">Software Development</h3>
+            <p>
+                We offer end-to-end custom software development services that turn your business ideas into robust, scalable, and efficient solutions.
+                Our development process emphasizes performance, security, and user experience.
+                Whether it’s enterprise applications, SaaS products, or automation tools, we deliver solutions tailored to your operational needs.
+                Our team follows agile methodologies to ensure timely delivery and adaptability to evolving requirements.
+                With continuous support and maintenance, we make sure your systems stay updated and optimized for years to come.
+            </p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='software.jpeg') }}" alt="Software Development" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Website Development -->
+    <div class="row mb-5 align-items-center flex-md-row-reverse">
+        <div class="col-md-6">
+            <h3 class="fw-semibold">Website Development</h3>
+            <p>
+                We design and develop stunning, responsive websites that communicate your brand story and engage your audience effectively.
+                From portfolio sites to enterprise web portals, our solutions are built to perform seamlessly across devices.
+                We focus on clean UI/UX, SEO optimization, and performance to ensure a lasting impression on your visitors.
+                Every project undergoes rigorous testing to guarantee stability, accessibility, and scalability.
+                With integrated analytics and support, your website becomes a powerful tool for growth and engagement.
+            </p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='website.jpeg') }}" alt="Website Development" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- AI and Machine Learning -->
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+            <h3 class="fw-semibold">AI & Machine Learning</h3>
+            <p>
+                Our AI and Machine Learning services help businesses make smarter decisions by unlocking insights hidden within their data.
+                We specialize in predictive analytics, natural language processing, and intelligent automation solutions.
+                Our models are designed to be scalable, interpretable, and aligned with your business objectives.
+                From recommendation engines to AI-driven chatbots, we create intelligent systems that adapt to your operations.
+                With continuous monitoring and optimization, our AI solutions evolve as your business grows.
+            </p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='ai ml.jpeg') }}" alt="AI and ML" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <!-- Consulting Services -->
+    <div class="row mb-5 align-items-center flex-md-row-reverse">
+        <div class="col-md-6">
+            <h3 class="fw-semibold">Consulting Services</h3>
+            <p>
+                Our consulting team partners with organizations to drive transformation through strategic technology adoption.
+                We analyze your existing workflows, identify inefficiencies, and recommend data-driven solutions that improve productivity.
+                Our experts assist in digital transformation, cloud migration, and process automation planning.
+                Whether you’re a startup or an established enterprise, we guide you to make technology work for your long-term success.
+                With a focus on measurable results, we help you navigate challenges and stay competitive in a fast-changing digital world.
+            </p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='consulting.jpeg') }}" alt="Consulting Services" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg px-4">Get in Touch</a>
+    </div>
+</div>
+{% endblock %}

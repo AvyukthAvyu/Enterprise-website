@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5 card p-4 shadow-sm">
+  <h3 class="mb-4">Schedule Interview for {{ app.name }}</h3>
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Interview Date</label>
+      <input type="date" name="interview_date" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Interview Time</label>
+      <input type="time" name="interview_time" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Invite</button>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}
