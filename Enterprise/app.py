@@ -16,7 +16,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
-OPENAI_API_KEY="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"
+OPENAI_API_KEY="your_key"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
@@ -40,8 +40,8 @@ class JobApplication(db.Model):
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'eminent0267@gmail.com'   # your company email
-app.config['MAIL_PASSWORD'] = 'nvkv menb jpdg yvba'             # Gmail App Password
+app.config['MAIL_USERNAME'] = 'yourmail@gmail.com'   # your company email
+app.config['MAIL_PASSWORD'] = 'password'             # Gmail App Password
 app.config['MAIL_DEFAULT_SENDER'] = ('Eminent Enterprise HR Team', 'eminent0267@gmail.com')
 
 mail = Mail(app)
@@ -286,4 +286,5 @@ with app.app_context():
     db.create_all()
 
 if __name__ == "__main__":
+
     app.run(debug=True)
